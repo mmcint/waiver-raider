@@ -13,6 +13,7 @@ If you'd like to develop and/or build the Waiver Raider Fantasy Football Analyti
 3. (Optional) Edit the books source files located in the `waiver-raider/` directory
 4. Run `jupyter-book clean waiver-raider/` to remove any existing builds
 5. Run `jupyter-book build waiver-raider/`
+6. Push to main and run `ghp-import -n -p -f _build/html`
 
 A fully-rendered HTML version of the book will be built in `waiver-raider/_build/html/`.
 
