@@ -11,13 +11,11 @@ root: index
 # Or you organize the TOC by parts
 
 parts:
-  - caption: Chapters
+  - caption: Posts
     numbered: true
     maxdepth: 2
     chapters:
-      - file: book/markdown
-      - file: book/notebooks
       - file: book/scraping_fantasy_data
-  - caption: Appendices
+  - caption: Helpful Resources
     chapters:
-      - file: book/bibliography
+      - file: book/resources
