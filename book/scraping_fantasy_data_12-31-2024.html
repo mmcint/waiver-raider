@@ -1,0 +1,2720 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Scraping Fantasy Data - December 31st, 2024 &#8212; Waiver Raider Fantasy Football Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/scraping_fantasy_data_12-31-2024';</script>
+    <link rel="canonical" href="https://mmcint.github.io/waiver-raider/book/scraping_fantasy_data_12-31-2024.html" />
+    <link rel="icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Useful Websites" href="resources.html" />
+    <link rel="prev" title="Welcome to the Waiver Raiders Fantasy Football Analytics Blog" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo_sm.png" class="logo__image only-light" alt="Waiver Raider Fantasy Football Analytics - Home"/>
+    <img src="../_static/logo_sm.png" class="logo__image only-dark pst-js-only" alt="Waiver Raider Fantasy Football Analytics - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Blog Posts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Scraping Fantasy Data - December 31st, 2024</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Helpful Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Useful Websites</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/mmcint/waiver-raider/master?urlpath=tree/book/scraping_fantasy_data_12-31-2024.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/mmcint/waiver-raider/blob/master/book/scraping_fantasy_data_12-31-2024.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mmcint/waiver-raider" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mmcint/waiver-raider/edit/main/book/scraping_fantasy_data_12-31-2024.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mmcint/waiver-raider/issues/new?title=Issue%20on%20page%20%2Fbook/scraping_fantasy_data_12-31-2024.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/scraping_fantasy_data_12-31-2024.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Scraping Fantasy Data - December 31st, 2024</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/mmcint/waiver-raider/blob/main/scraping_fantasy_data_10_12_24.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="scraping-fantasy-data-december-31st-2024">
+<h1><span class="section-number">1. </span>Scraping Fantasy Data - December 31st, 2024<a class="headerlink" href="#scraping-fantasy-data-december-31st-2024" title="Link to this heading">#</a></h1>
+<p>This is a notebook that will scrape advanced stats for offensive fantasy football positions. The website used to scrape is FantasyPros. Additionally, I calculate Average Depth of Target, or ADOT, for WRs and TEs. I’ll explain this statistic at the bottom of the notebook. First, let’s build a web scraper using <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, which is standard method when using Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numexpr</span> <span class="k">as</span> <span class="nn">ne</span> 
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NUMEXPR_MAX_THREADS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NUMEXPR_NUM_THREADS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I decided to use <code class="docutils literal notranslate"><span class="pre">logging</span></code> in this example to help me track any errors that might arise during building. This is something i’m usually not great at, but trying to get better. Below you can see that I use a series of <code class="docutils literal notranslate"><span class="pre">try:</span></code> and <code class="docutils literal notranslate"><span class="pre">except:</span></code> statements. These helped me build out this code and track down the exact line bugging out. I highly recommend.</p>
+<p>First thing, which isn’t the best way of doing things, is hardcoding the fantasy pros url into my <code class="docutils literal notranslate"><span class="pre">scrape_fantasypros()</span></code> function. I set my arguments to be position and season. I could just run this function to get a single season and position’s dataframe, but i use this function to run multiple seasons and positions in parallel. In a few cells I’ll explain how I extract multiple years and postions into a list of dataframes.</p>
+<p>I make sure to create two columns for the season and player position. This will help later when breaking up into separate analyses. I also remove the first row and column of the scraped data. This data is not useful to the analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scrape_fantasypros</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">season</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://www.fantasypros.com/nfl/advanced-stats-</span><span class="si">{</span><span class="n">position</span><span class="si">}</span><span class="s2">.php?year=</span><span class="si">{</span><span class="n">season</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;data&#39;</span><span class="p">})</span>
+
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="n">th</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">)]</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[[</span><span class="n">td</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">td</span> <span class="ow">in</span> <span class="n">tr</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)]</span> <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]]</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Season&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">season</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">position</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Player&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Player&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="mi">1</span><span class="p">:]</span>
+        
+        <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s1">&#39;qb&#39;</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">get_qb_rushing</span><span class="p">(</span><span class="n">season</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">df</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">df</span>
+
+        <span class="k">return</span> <span class="n">df</span>
+            
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error scraping </span><span class="si">{</span><span class="n">position</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> data for </span><span class="si">{</span><span class="n">season</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error parsing </span><span class="si">{</span><span class="n">position</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> data for </span><span class="si">{</span><span class="n">season</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I’ve chosen to pull the data from the advanced stats positional pages on Fantasy Pros. I find these pages to be rich with information that you may hear people who play a lot of fantasy football. One of the issues I found with pulling the advanced stats data occurs on the QB page. If you navigate to the <a class="reference external" href="https://www.fantasypros.com/nfl/advanced-stats-qb.php">Advanced QB Stats</a> page there is no rushing information available. That’s because rushing information can be found on the <a class="reference external" href="https://www.fantasypros.com/nfl/stats/qb.php">Standard QB Stats</a>. To work around this issue, I wrote the function below, called <code class="docutils literal notranslate"><span class="pre">get_qb_rushing()</span></code>. This function extracts the important statistics from the standard table, like rush attempts, rush yards, and rushing touchdowns.</p>
+<p>Why put so much effort into getting the QB rushing information? As you you will see in future analyses, a Quarterback that also has mobility can be more valuable to your team than one that is not mobile. We will explore this in a future post.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_qb_rushing</span><span class="p">(</span><span class="n">season</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">dataframe</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://www.fantasypros.com/nfl/stats/qb.php?year=</span><span class="si">{</span><span class="n">season</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;data&#39;</span><span class="p">})</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="n">th</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">)]</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[[</span><span class="n">td</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">td</span> <span class="ow">in</span> <span class="n">tr</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)]</span> <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]]</span>
+
+    <span class="n">rushing_list_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="n">rushing_list_df</span><span class="p">[</span><span class="s1">&#39;Season&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">season</span>
+    <span class="n">rushing_list_df</span><span class="p">[</span><span class="s1">&#39;Position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">position</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+    <span class="n">col_nums</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">18</span><span class="p">]</span>
+    <span class="n">out_df</span> <span class="o">=</span> <span class="n">rushing_list_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="n">col_nums</span><span class="p">]</span>
+    <span class="n">out_df</span> <span class="o">=</span> <span class="n">out_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ATT&#39;</span><span class="p">:</span><span class="s1">&#39;Rush_Att&#39;</span><span class="p">,</span> <span class="s1">&#39;YDS&#39;</span><span class="p">:</span> <span class="s1">&#39;Rush_Yds&#39;</span><span class="p">,</span> <span class="s1">&#39;TD&#39;</span><span class="p">:</span><span class="s1">&#39;Rush_TDs&#39;</span><span class="p">})</span>
+
+    <span class="n">merged_df</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">out_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Player&#39;</span><span class="p">,</span> <span class="s1">&#39;Season&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">merged_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As I alluded to above, what happens if I want to extract multiple positions and multiple seasons worth of data. Well, I could manually input each year and position into the <code class="docutils literal notranslate"><span class="pre">scrape_fantasypros()</span></code> function, then extract the data into a <code class="docutils literal notranslate"><span class="pre">csv</span></code> for analysis. That sounds time consuming and i’m kind of a lazy person. Let’s write some code to speed up the process! The next three lines demonstrate how I use a package called <code class="docutils literal notranslate"><span class="pre">concurrent</span></code> to parallelize the web scraping process to get data faster. First, I create a wrapper function called <code class="docutils literal notranslate"><span class="pre">scrape_worker()</span></code> that takes a position and season. I use this function in a function called <code class="docutils literal notranslate"><span class="pre">extract_data()</span></code> to get data from multiple seasons and multiple positions. The inputs are lists for positions and seasons needed. The output is a list of dataframes for each combination!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scrape_worker</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">position</span><span class="p">,</span> <span class="n">season</span> <span class="o">=</span> <span class="n">args</span>
+    <span class="k">return</span> <span class="n">scrape_fantasypros</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">season</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_data</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">seasons</span><span class="p">):</span>
+    <span class="n">scrape_args</span> <span class="o">=</span> <span class="p">[(</span><span class="n">position</span><span class="p">,</span> <span class="n">season</span><span class="p">)</span> <span class="k">for</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">positions</span> <span class="k">for</span> <span class="n">season</span> <span class="ow">in</span> <span class="n">seasons</span><span class="p">]</span>
+
+    <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">future_to_args</span> <span class="o">=</span> <span class="p">{</span><span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">scrape_worker</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span> <span class="n">arg</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">scrape_args</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">as_completed</span><span class="p">(</span><span class="n">future_to_args</span><span class="p">):</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="n">future_to_args</span><span class="p">[</span><span class="n">future</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">all_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scraped </span><span class="si">{</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> data for </span><span class="si">{</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error processing </span><span class="si">{</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> data for </span><span class="si">{</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                
+    <span class="k">return</span> <span class="n">all_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;qb&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">,</span><span class="s1">&#39;wr&#39;</span><span class="p">,</span><span class="s1">&#39;te&#39;</span><span class="p">]</span>
+<span class="n">seasons</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2023</span><span class="p">]</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">extract_data</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">seasons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-12-31 15:49:45,964 - INFO - Scraped RB data for 2023
+2024-12-31 15:49:48,663 - INFO - Scraped QB data for 2023
+2024-12-31 15:49:52,189 - INFO - Scraped TE data for 2023
+2024-12-31 15:49:54,201 - INFO - Scraped WR data for 2023
+</pre></div>
+</div>
+</div>
+</div>
+<p>Boom baby! We have data for QB, RB, WR, and TE from 2023. Let’s take a look at the data to see it’s quality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>G</th>
+      <th>REC</th>
+      <th>YDS</th>
+      <th>Y/R</th>
+      <th>YBC</th>
+      <th>YBC/R</th>
+      <th>AIR</th>
+      <th>AIR/R</th>
+      <th>YAC</th>
+      <th>...</th>
+      <th>DROP</th>
+      <th>RZ TGT</th>
+      <th>10+ YDS</th>
+      <th>20+ YDS</th>
+      <th>30+ YDS</th>
+      <th>40+ YDS</th>
+      <th>50+ YDS</th>
+      <th>LNG</th>
+      <th>Season</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>CeeDee Lamb (DAL)</td>
+      <td>17</td>
+      <td>135</td>
+      <td>1,749</td>
+      <td>13.0</td>
+      <td>1,073</td>
+      <td>7.9</td>
+      <td>1,726</td>
+      <td>12.8</td>
+      <td>676</td>
+      <td>...</td>
+      <td>6</td>
+      <td>31</td>
+      <td>73</td>
+      <td>29</td>
+      <td>8</td>
+      <td>3</td>
+      <td>1</td>
+      <td>92</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Tyreek Hill (MIA)</td>
+      <td>16</td>
+      <td>119</td>
+      <td>1,799</td>
+      <td>15.1</td>
+      <td>1,146</td>
+      <td>9.6</td>
+      <td>1,847</td>
+      <td>15.5</td>
+      <td>653</td>
+      <td>...</td>
+      <td>12</td>
+      <td>24</td>
+      <td>64</td>
+      <td>29</td>
+      <td>14</td>
+      <td>9</td>
+      <td>5</td>
+      <td>78</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Amon-Ra St. Brown (DET)</td>
+      <td>16</td>
+      <td>119</td>
+      <td>1,515</td>
+      <td>12.7</td>
+      <td>847</td>
+      <td>7.1</td>
+      <td>1,297</td>
+      <td>10.9</td>
+      <td>668</td>
+      <td>...</td>
+      <td>8</td>
+      <td>23</td>
+      <td>60</td>
+      <td>24</td>
+      <td>6</td>
+      <td>3</td>
+      <td>1</td>
+      <td>70</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mike Evans (TB)</td>
+      <td>17</td>
+      <td>79</td>
+      <td>1,255</td>
+      <td>15.9</td>
+      <td>933</td>
+      <td>11.8</td>
+      <td>1,899</td>
+      <td>24.0</td>
+      <td>322</td>
+      <td>...</td>
+      <td>7</td>
+      <td>14</td>
+      <td>46</td>
+      <td>20</td>
+      <td>10</td>
+      <td>6</td>
+      <td>3</td>
+      <td>75</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Puka Nacua (LAR)</td>
+      <td>17</td>
+      <td>105</td>
+      <td>1,486</td>
+      <td>14.2</td>
+      <td>854</td>
+      <td>8.1</td>
+      <td>1,453</td>
+      <td>13.8</td>
+      <td>632</td>
+      <td>...</td>
+      <td>13</td>
+      <td>16</td>
+      <td>59</td>
+      <td>25</td>
+      <td>10</td>
+      <td>3</td>
+      <td>2</td>
+      <td>80</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Miles Boykin (SEA)</td>
+      <td>16</td>
+      <td>3</td>
+      <td>17</td>
+      <td>5.7</td>
+      <td>15</td>
+      <td>5.0</td>
+      <td>19</td>
+      <td>6.3</td>
+      <td>2</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>Marvin Jones Jr. (FA)</td>
+      <td>6</td>
+      <td>5</td>
+      <td>35</td>
+      <td>7.0</td>
+      <td>26</td>
+      <td>5.2</td>
+      <td>80</td>
+      <td>16.0</td>
+      <td>9</td>
+      <td>...</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>16</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Malik Taylor (NYJ)</td>
+      <td>3</td>
+      <td>2</td>
+      <td>13</td>
+      <td>6.5</td>
+      <td>6</td>
+      <td>3.0</td>
+      <td>89</td>
+      <td>44.5</td>
+      <td>7</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>Austin Trammell (JAC)</td>
+      <td>15</td>
+      <td>4</td>
+      <td>29</td>
+      <td>7.3</td>
+      <td>-6</td>
+      <td>-1.5</td>
+      <td>25</td>
+      <td>6.3</td>
+      <td>35</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>14</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>James Proche II (CLE)</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>86</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+  </tbody>
+</table>
+<p>190 rows × 27 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player       object
+G            object
+REC          object
+YDS          object
+Y/R          object
+YBC          object
+YBC/R        object
+AIR          object
+AIR/R        object
+YAC          object
+YAC/R        object
+YACON        object
+YACON/R      object
+BRKTKL       object
+TGT          object
+% TM         object
+CATCHABLE    object
+DROP         object
+RZ TGT       object
+10+ YDS      object
+20+ YDS      object
+30+ YDS      object
+40+ YDS      object
+50+ YDS      object
+LNG          object
+Season        int64
+Position     object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looks like we might need to do a bit of clean up here. It looks like when the data was scraped into a <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> dataframe it took on object data types, instead of numerical data types. One reason for this is due to the special charaters, like <code class="docutils literal notranslate"><span class="pre">%</span></code> in <code class="docutils literal notranslate"><span class="pre">PCT</span></code> and <code class="docutils literal notranslate"><span class="pre">,</span></code> in <code class="docutils literal notranslate"><span class="pre">YDS</span></code> and <code class="docutils literal notranslate"><span class="pre">AIR</span></code>. These will need to be cleaned before we can convert to numerical columns. This is a critical step for future analysis because we will want to calculate our own metrics from the scraped stats. I clean up this data using a function called <code class="docutils literal notranslate"><span class="pre">clean_dataframes()</span></code>. This function removes the special characters identified above. It also helps us identify some issues in the RB dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_dataframes</span><span class="p">(</span><span class="n">dataframe_list</span><span class="p">):</span>
+    <span class="n">cleaned_dataframes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">dataframe_list</span><span class="p">:</span>
+        <span class="c1"># Ensure unique column names</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">ParserBase</span><span class="p">({</span><span class="s1">&#39;names&#39;</span><span class="p">:</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">})</span><span class="o">.</span><span class="n">_maybe_dedup_names</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="s1">&#39;Position&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">position</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s1">&#39;QB&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;PCT&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PCT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PCT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span>
+                <span class="k">if</span> <span class="s1">&#39;YDS&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;YDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;YDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s1">&#39;AIR&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;AIR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AIR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+            
+            <span class="k">elif</span> <span class="n">position</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;RB&#39;</span><span class="p">,</span> <span class="s1">&#39;WR&#39;</span><span class="p">,</span> <span class="s1">&#39;TE&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="s1">&#39;YDS&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;YDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;YDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s1">&#39;AIR&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;AIR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AIR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s1">&#39;% TM&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;% TM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;% TM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span>
+            
+            <span class="c1"># Convert remaining numeric columns</span>
+            <span class="n">numeric_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Player&#39;</span><span class="p">,</span> <span class="s1">&#39;Position&#39;</span><span class="p">]]</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">numeric_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">numeric_cols</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Reset index to avoid potential issues with duplicate indices</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">cleaned_dataframes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">cleaned_dataframes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_full_dataframe_list</span> <span class="o">=</span> <span class="n">clean_dataframes</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_full_dataframe_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>G</th>
+      <th>COMP</th>
+      <th>ATT</th>
+      <th>PCT</th>
+      <th>YDS</th>
+      <th>Y/A</th>
+      <th>AIR</th>
+      <th>AIR/A</th>
+      <th>10+ YDS</th>
+      <th>...</th>
+      <th>BLITZ</th>
+      <th>POOR</th>
+      <th>DROP</th>
+      <th>RZ ATT</th>
+      <th>RTG</th>
+      <th>Season</th>
+      <th>Position</th>
+      <th>Rush_Att</th>
+      <th>Rush_Yds</th>
+      <th>Rush_TDs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Josh Allen (BUF)</td>
+      <td>17</td>
+      <td>385</td>
+      <td>579</td>
+      <td>0.66</td>
+      <td>4306</td>
+      <td>7.4</td>
+      <td>2533</td>
+      <td>4.4</td>
+      <td>164</td>
+      <td>...</td>
+      <td>182</td>
+      <td>78</td>
+      <td>31</td>
+      <td>68</td>
+      <td>92</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>111</td>
+      <td>524</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jalen Hurts (PHI)</td>
+      <td>17</td>
+      <td>352</td>
+      <td>538</td>
+      <td>0.65</td>
+      <td>3858</td>
+      <td>7.2</td>
+      <td>2374</td>
+      <td>4.4</td>
+      <td>149</td>
+      <td>...</td>
+      <td>185</td>
+      <td>72</td>
+      <td>19</td>
+      <td>50</td>
+      <td>88</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>157</td>
+      <td>605</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dak Prescott (DAL)</td>
+      <td>17</td>
+      <td>410</td>
+      <td>590</td>
+      <td>0.69</td>
+      <td>4516</td>
+      <td>7.7</td>
+      <td>2768</td>
+      <td>4.7</td>
+      <td>179</td>
+      <td>...</td>
+      <td>163</td>
+      <td>69</td>
+      <td>38</td>
+      <td>104</td>
+      <td>104</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>55</td>
+      <td>242</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Lamar Jackson (BAL)</td>
+      <td>16</td>
+      <td>307</td>
+      <td>457</td>
+      <td>0.67</td>
+      <td>3678</td>
+      <td>8.0</td>
+      <td>2140</td>
+      <td>4.7</td>
+      <td>150</td>
+      <td>...</td>
+      <td>169</td>
+      <td>73</td>
+      <td>22</td>
+      <td>61</td>
+      <td>102</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>148</td>
+      <td>821</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Jordan Love (GB)</td>
+      <td>17</td>
+      <td>372</td>
+      <td>579</td>
+      <td>0.64</td>
+      <td>4159</td>
+      <td>7.2</td>
+      <td>2534</td>
+      <td>4.4</td>
+      <td>162</td>
+      <td>...</td>
+      <td>215</td>
+      <td>98</td>
+      <td>29</td>
+      <td>93</td>
+      <td>98</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>50</td>
+      <td>247</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Kyle Trask (TB)</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>1</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Teddy Bridgewater (DET)</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>2</td>
+      <td>-2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>Matt Barkley (FA)</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>3</td>
+      <td>-3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Nathan Peterman (ATL)</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>2</td>
+      <td>-4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Kyle Allen (PIT)</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>QB</td>
+      <td>13</td>
+      <td>-13</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 28 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_full_dataframe_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player       object
+G             int64
+COMP          int64
+ATT           int64
+PCT         float64
+YDS           int64
+Y/A         float64
+AIR           int64
+AIR/A       float64
+10+ YDS       int64
+20+ YDS       int64
+30+ YDS       int64
+40+ YDS       int64
+50+ YDS       int64
+PKT TIME    float64
+SACK          int64
+KNCK          int64
+HRRY          int64
+BLITZ         int64
+POOR          int64
+DROP          int64
+RZ ATT        int64
+RTG           int64
+Season        int64
+Position     object
+Rush_Att      int64
+Rush_Yds      int64
+Rush_TDs      int64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahh. So fresh and clean! Looks like we resolved the issues with the QB dataframe. I did notice something weird about the RB dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_full_dataframe_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>G</th>
+      <th>ATT</th>
+      <th>YDS</th>
+      <th>Y/ATT</th>
+      <th>YBCON</th>
+      <th>YBCON/ATT</th>
+      <th>YACON</th>
+      <th>YACON/ATT</th>
+      <th>BRKTKL</th>
+      <th>...</th>
+      <th>30+ YDS</th>
+      <th>40+ YDS</th>
+      <th>50+ YDS</th>
+      <th>LNG</th>
+      <th>REC</th>
+      <th>TGT</th>
+      <th>RZ TGT</th>
+      <th>YACON.1</th>
+      <th>Season</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Christian McCaffrey (SF)</td>
+      <td>16</td>
+      <td>272</td>
+      <td>1459</td>
+      <td>5.4</td>
+      <td>886</td>
+      <td>3.3</td>
+      <td>573</td>
+      <td>2.1</td>
+      <td>13</td>
+      <td>...</td>
+      <td>4</td>
+      <td>3</td>
+      <td>3</td>
+      <td>72</td>
+      <td>67</td>
+      <td>83</td>
+      <td>16</td>
+      <td>73</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Raheem Mostert (MIA)</td>
+      <td>15</td>
+      <td>209</td>
+      <td>1012</td>
+      <td>4.8</td>
+      <td>620</td>
+      <td>3.0</td>
+      <td>392</td>
+      <td>1.9</td>
+      <td>15</td>
+      <td>...</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+      <td>49</td>
+      <td>25</td>
+      <td>32</td>
+      <td>6</td>
+      <td>59</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Travis Etienne Jr. (JAC)</td>
+      <td>17</td>
+      <td>267</td>
+      <td>1008</td>
+      <td>3.8</td>
+      <td>583</td>
+      <td>2.2</td>
+      <td>425</td>
+      <td>1.6</td>
+      <td>31</td>
+      <td>...</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>62</td>
+      <td>58</td>
+      <td>73</td>
+      <td>2</td>
+      <td>145</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kyren Williams (LAR)</td>
+      <td>12</td>
+      <td>228</td>
+      <td>1144</td>
+      <td>5.0</td>
+      <td>791</td>
+      <td>3.5</td>
+      <td>353</td>
+      <td>1.5</td>
+      <td>20</td>
+      <td>...</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>56</td>
+      <td>32</td>
+      <td>48</td>
+      <td>12</td>
+      <td>46</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Derrick Henry (BAL)</td>
+      <td>17</td>
+      <td>280</td>
+      <td>1167</td>
+      <td>4.2</td>
+      <td>597</td>
+      <td>2.1</td>
+      <td>570</td>
+      <td>2.0</td>
+      <td>23</td>
+      <td>...</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>69</td>
+      <td>28</td>
+      <td>36</td>
+      <td>2</td>
+      <td>46</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>Evan Hull (IND)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>Adam Prentice (NO)</td>
+      <td>13</td>
+      <td>2</td>
+      <td>12</td>
+      <td>6.0</td>
+      <td>10</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>James Robinson (FA)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>Jonathan Williams (FA)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-2</td>
+      <td>-2.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>Deon Jackson (FA)</td>
+      <td>2</td>
+      <td>14</td>
+      <td>16</td>
+      <td>1.1</td>
+      <td>4</td>
+      <td>0.3</td>
+      <td>12</td>
+      <td>0.9</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>5</td>
+      <td>6</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+  </tbody>
+</table>
+<p>139 rows × 25 columns</p>
+</div></div></div>
+</div>
+<p>Notice that there are two YACON (Yards after Contact) columns. This gave me some trouble while I was writing the <code class="docutils literal notranslate"><span class="pre">clean_dataframes()</span></code> function. The purpose of the first line of the function (<code class="docutils literal notranslate"><span class="pre">df.columns</span> <span class="pre">=</span> <span class="pre">pd.io.parsers.ParserBase({'names':df.columns})._maybe_dedup_names(df.columns)</span></code>) is to help identify columns that might be duplicated. In this case we are looking at RB data, and the second YACON actually refers to the YACON for recieving plays. I’ll clean this up by changing the name from <code class="docutils literal notranslate"><span class="pre">YACON.1</span></code> to <code class="docutils literal notranslate"><span class="pre">REC_YACON</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_full_dataframe_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cleaned_full_dataframe_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;YACON.1&#39;</span><span class="p">:</span><span class="s1">&#39;REC_YACON&#39;</span><span class="p">})</span>
+<span class="n">cleaned_full_dataframe_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>G</th>
+      <th>ATT</th>
+      <th>YDS</th>
+      <th>Y/ATT</th>
+      <th>YBCON</th>
+      <th>YBCON/ATT</th>
+      <th>YACON</th>
+      <th>YACON/ATT</th>
+      <th>BRKTKL</th>
+      <th>...</th>
+      <th>30+ YDS</th>
+      <th>40+ YDS</th>
+      <th>50+ YDS</th>
+      <th>LNG</th>
+      <th>REC</th>
+      <th>TGT</th>
+      <th>RZ TGT</th>
+      <th>REC_YACON</th>
+      <th>Season</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Christian McCaffrey (SF)</td>
+      <td>16</td>
+      <td>272</td>
+      <td>1459</td>
+      <td>5.4</td>
+      <td>886</td>
+      <td>3.3</td>
+      <td>573</td>
+      <td>2.1</td>
+      <td>13</td>
+      <td>...</td>
+      <td>4</td>
+      <td>3</td>
+      <td>3</td>
+      <td>72</td>
+      <td>67</td>
+      <td>83</td>
+      <td>16</td>
+      <td>73</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Raheem Mostert (MIA)</td>
+      <td>15</td>
+      <td>209</td>
+      <td>1012</td>
+      <td>4.8</td>
+      <td>620</td>
+      <td>3.0</td>
+      <td>392</td>
+      <td>1.9</td>
+      <td>15</td>
+      <td>...</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+      <td>49</td>
+      <td>25</td>
+      <td>32</td>
+      <td>6</td>
+      <td>59</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Travis Etienne Jr. (JAC)</td>
+      <td>17</td>
+      <td>267</td>
+      <td>1008</td>
+      <td>3.8</td>
+      <td>583</td>
+      <td>2.2</td>
+      <td>425</td>
+      <td>1.6</td>
+      <td>31</td>
+      <td>...</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>62</td>
+      <td>58</td>
+      <td>73</td>
+      <td>2</td>
+      <td>145</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Kyren Williams (LAR)</td>
+      <td>12</td>
+      <td>228</td>
+      <td>1144</td>
+      <td>5.0</td>
+      <td>791</td>
+      <td>3.5</td>
+      <td>353</td>
+      <td>1.5</td>
+      <td>20</td>
+      <td>...</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>56</td>
+      <td>32</td>
+      <td>48</td>
+      <td>12</td>
+      <td>46</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Derrick Henry (BAL)</td>
+      <td>17</td>
+      <td>280</td>
+      <td>1167</td>
+      <td>4.2</td>
+      <td>597</td>
+      <td>2.1</td>
+      <td>570</td>
+      <td>2.0</td>
+      <td>23</td>
+      <td>...</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>69</td>
+      <td>28</td>
+      <td>36</td>
+      <td>2</td>
+      <td>46</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>Evan Hull (IND)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>Adam Prentice (NO)</td>
+      <td>13</td>
+      <td>2</td>
+      <td>12</td>
+      <td>6.0</td>
+      <td>10</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>James Robinson (FA)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>Jonathan Williams (FA)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-2</td>
+      <td>-2.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>Deon Jackson (FA)</td>
+      <td>2</td>
+      <td>14</td>
+      <td>16</td>
+      <td>1.1</td>
+      <td>4</td>
+      <td>0.3</td>
+      <td>12</td>
+      <td>0.9</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>5</td>
+      <td>6</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2023</td>
+      <td>RB</td>
+    </tr>
+  </tbody>
+</table>
+<p>139 rows × 25 columns</p>
+</div></div></div>
+</div>
+<p>Much better! Now let’s check WR and TE.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_full_dataframe_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>G</th>
+      <th>REC</th>
+      <th>YDS</th>
+      <th>Y/R</th>
+      <th>YBC</th>
+      <th>YBC/R</th>
+      <th>AIR</th>
+      <th>AIR/R</th>
+      <th>YAC</th>
+      <th>...</th>
+      <th>DROP</th>
+      <th>RZ TGT</th>
+      <th>10+ YDS</th>
+      <th>20+ YDS</th>
+      <th>30+ YDS</th>
+      <th>40+ YDS</th>
+      <th>50+ YDS</th>
+      <th>LNG</th>
+      <th>Season</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sam LaPorta (DET)</td>
+      <td>17</td>
+      <td>86</td>
+      <td>889</td>
+      <td>10.3</td>
+      <td>531</td>
+      <td>6.2</td>
+      <td>851</td>
+      <td>9.9</td>
+      <td>358</td>
+      <td>...</td>
+      <td>5</td>
+      <td>15</td>
+      <td>35</td>
+      <td>8</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>48</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>George Kittle (SF)</td>
+      <td>16</td>
+      <td>65</td>
+      <td>1020</td>
+      <td>15.7</td>
+      <td>537</td>
+      <td>8.3</td>
+      <td>852</td>
+      <td>13.1</td>
+      <td>483</td>
+      <td>...</td>
+      <td>4</td>
+      <td>12</td>
+      <td>40</td>
+      <td>18</td>
+      <td>8</td>
+      <td>3</td>
+      <td>2</td>
+      <td>66</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Travis Kelce (KC)</td>
+      <td>15</td>
+      <td>93</td>
+      <td>984</td>
+      <td>10.6</td>
+      <td>515</td>
+      <td>5.5</td>
+      <td>808</td>
+      <td>8.7</td>
+      <td>469</td>
+      <td>...</td>
+      <td>7</td>
+      <td>19</td>
+      <td>39</td>
+      <td>12</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>53</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>T.J. Hockenson (MIN)</td>
+      <td>15</td>
+      <td>95</td>
+      <td>960</td>
+      <td>10.1</td>
+      <td>624</td>
+      <td>6.6</td>
+      <td>976</td>
+      <td>10.3</td>
+      <td>336</td>
+      <td>...</td>
+      <td>4</td>
+      <td>10</td>
+      <td>40</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>29</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>David Njoku (CLE)</td>
+      <td>16</td>
+      <td>81</td>
+      <td>882</td>
+      <td>10.9</td>
+      <td>283</td>
+      <td>3.5</td>
+      <td>551</td>
+      <td>6.8</td>
+      <td>599</td>
+      <td>...</td>
+      <td>11</td>
+      <td>17</td>
+      <td>29</td>
+      <td>12</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+      <td>43</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Kenny Yeboah (NYJ)</td>
+      <td>5</td>
+      <td>2</td>
+      <td>28</td>
+      <td>14.0</td>
+      <td>8</td>
+      <td>4.0</td>
+      <td>19</td>
+      <td>9.5</td>
+      <td>20</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Greg Dulcich (NYG)</td>
+      <td>2</td>
+      <td>3</td>
+      <td>25</td>
+      <td>8.3</td>
+      <td>20</td>
+      <td>6.7</td>
+      <td>23</td>
+      <td>7.7</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Nate Adkins (DEN)</td>
+      <td>10</td>
+      <td>4</td>
+      <td>22</td>
+      <td>5.5</td>
+      <td>-2</td>
+      <td>-0.5</td>
+      <td>-5</td>
+      <td>-1.3</td>
+      <td>24</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Chris Manhertz (NYG)</td>
+      <td>16</td>
+      <td>2</td>
+      <td>16</td>
+      <td>8.0</td>
+      <td>6</td>
+      <td>3.0</td>
+      <td>12</td>
+      <td>6.0</td>
+      <td>10</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Eric Saubert (SF)</td>
+      <td>8</td>
+      <td>3</td>
+      <td>12</td>
+      <td>4.0</td>
+      <td>6</td>
+      <td>2.0</td>
+      <td>6</td>
+      <td>2.0</td>
+      <td>6</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2023</td>
+      <td>TE</td>
+    </tr>
+  </tbody>
+</table>
+<p>99 rows × 27 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_full_dataframe_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>G</th>
+      <th>REC</th>
+      <th>YDS</th>
+      <th>Y/R</th>
+      <th>YBC</th>
+      <th>YBC/R</th>
+      <th>AIR</th>
+      <th>AIR/R</th>
+      <th>YAC</th>
+      <th>...</th>
+      <th>DROP</th>
+      <th>RZ TGT</th>
+      <th>10+ YDS</th>
+      <th>20+ YDS</th>
+      <th>30+ YDS</th>
+      <th>40+ YDS</th>
+      <th>50+ YDS</th>
+      <th>LNG</th>
+      <th>Season</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CeeDee Lamb (DAL)</td>
+      <td>17</td>
+      <td>135</td>
+      <td>1749</td>
+      <td>13.0</td>
+      <td>NaN</td>
+      <td>7.9</td>
+      <td>1726</td>
+      <td>12.8</td>
+      <td>676</td>
+      <td>...</td>
+      <td>6</td>
+      <td>31</td>
+      <td>73</td>
+      <td>29</td>
+      <td>8</td>
+      <td>3</td>
+      <td>1</td>
+      <td>92</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tyreek Hill (MIA)</td>
+      <td>16</td>
+      <td>119</td>
+      <td>1799</td>
+      <td>15.1</td>
+      <td>NaN</td>
+      <td>9.6</td>
+      <td>1847</td>
+      <td>15.5</td>
+      <td>653</td>
+      <td>...</td>
+      <td>12</td>
+      <td>24</td>
+      <td>64</td>
+      <td>29</td>
+      <td>14</td>
+      <td>9</td>
+      <td>5</td>
+      <td>78</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Amon-Ra St. Brown (DET)</td>
+      <td>16</td>
+      <td>119</td>
+      <td>1515</td>
+      <td>12.7</td>
+      <td>847.0</td>
+      <td>7.1</td>
+      <td>1297</td>
+      <td>10.9</td>
+      <td>668</td>
+      <td>...</td>
+      <td>8</td>
+      <td>23</td>
+      <td>60</td>
+      <td>24</td>
+      <td>6</td>
+      <td>3</td>
+      <td>1</td>
+      <td>70</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Mike Evans (TB)</td>
+      <td>17</td>
+      <td>79</td>
+      <td>1255</td>
+      <td>15.9</td>
+      <td>933.0</td>
+      <td>11.8</td>
+      <td>1899</td>
+      <td>24.0</td>
+      <td>322</td>
+      <td>...</td>
+      <td>7</td>
+      <td>14</td>
+      <td>46</td>
+      <td>20</td>
+      <td>10</td>
+      <td>6</td>
+      <td>3</td>
+      <td>75</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Puka Nacua (LAR)</td>
+      <td>17</td>
+      <td>105</td>
+      <td>1486</td>
+      <td>14.2</td>
+      <td>854.0</td>
+      <td>8.1</td>
+      <td>1453</td>
+      <td>13.8</td>
+      <td>632</td>
+      <td>...</td>
+      <td>13</td>
+      <td>16</td>
+      <td>59</td>
+      <td>25</td>
+      <td>10</td>
+      <td>3</td>
+      <td>2</td>
+      <td>80</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Miles Boykin (SEA)</td>
+      <td>16</td>
+      <td>3</td>
+      <td>17</td>
+      <td>5.7</td>
+      <td>15.0</td>
+      <td>5.0</td>
+      <td>19</td>
+      <td>6.3</td>
+      <td>2</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Marvin Jones Jr. (FA)</td>
+      <td>6</td>
+      <td>5</td>
+      <td>35</td>
+      <td>7.0</td>
+      <td>26.0</td>
+      <td>5.2</td>
+      <td>80</td>
+      <td>16.0</td>
+      <td>9</td>
+      <td>...</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>16</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>Malik Taylor (NYJ)</td>
+      <td>3</td>
+      <td>2</td>
+      <td>13</td>
+      <td>6.5</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>89</td>
+      <td>44.5</td>
+      <td>7</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Austin Trammell (JAC)</td>
+      <td>15</td>
+      <td>4</td>
+      <td>29</td>
+      <td>7.3</td>
+      <td>-6.0</td>
+      <td>-1.5</td>
+      <td>25</td>
+      <td>6.3</td>
+      <td>35</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>14</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>James Proche II (CLE)</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>86</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2023</td>
+      <td>WR</td>
+    </tr>
+  </tbody>
+</table>
+<p>190 rows × 27 columns</p>
+</div></div></div>
+</div>
+<p>Perfect! Now we’re ready to do some analysis in the next post!</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to the Waiver Raiders Fantasy Football Analytics Blog</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="resources.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Useful Websites</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mike McIntire
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
