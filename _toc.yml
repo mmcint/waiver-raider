@@ -12,7 +12,7 @@ root: index
 
 parts:
   - caption: Blog Posts
-    numbered: true
+    numbered: False
     maxdepth: 2
     chapters:
       - file: book/scraping_fantasy_data_12-31-2024
