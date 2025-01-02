@@ -19,3 +19,4 @@ parts:
   - caption: Helpful Resources
     chapters:
       - file: book/resources
+      - file: book/scoring
