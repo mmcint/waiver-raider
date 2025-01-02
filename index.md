@@ -1,8 +1,10 @@
-# Welcome to the Waiver Raiders Fantasy Football Analytics Blog
+# Welcome to the Waiver Raiders Blog
 
 ![waiver raiders](logo.png)
 
-The purpose of this blog is to share practical tutorials for doing your own analytics in fantasy football. I don’t claim to be an expert—or even particularly good—at fantasy football, but I’m deeply curious about how to better prepare during the offseason to compete for a championship. In my league, everyone relies on the same podcasts and websites, so I want to take a different approach. For me, the best way to learn is by doing, and this blog is my way of diving deeper into the world of fantasy football to improve my strategies and gear up for the 2025 season.
+Welcome to Waiver Raiders! This blog is all about sharing practical, hands-on tutorials to help you dive into your own analytics for fantasy football. The name Waiver Raiders highlights the critical role of mastering the waiver wire—because success in fantasy football takes more than just a strong draft. It’s about making smart, informed moves throughout the season.
+
+I’m not claiming to be an expert—or even particularly skilled—at fantasy football, but I am fascinated by the process of improving and finding an edge. In my league, everyone seems to follow the same podcasts and websites, so I’m exploring a different path. For me, the best way to learn is to roll up my sleeves and analyze the data myself. This blog is my way of experimenting, strategizing, and getting ready for a serious run at the 2025 championship.
 
 My goal for 2025 is to provide one tutorial per week in the form of a Jupyter Notebook, diving deep into a specific fantasy football topic. Navigation for these notebooks is on the left side of the page.
 
