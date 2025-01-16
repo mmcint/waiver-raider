@@ -15,7 +15,7 @@ parts:
     numbered: False
     maxdepth: 2
     chapters:
-      - file: book/scraping_fantasy_data_12-31-2024
+      - file: book/scraping_fantasy_data_01-01-2025
   - caption: Helpful Resources
     chapters:
       - file: book/resources

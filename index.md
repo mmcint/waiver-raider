@@ -6,7 +6,7 @@ Welcome to Waiver Raiders! This blog is all about sharing practical, hands-on tu
 
 I’m not claiming to be an expert—or even particularly skilled—at fantasy football, but I am fascinated by the process of improving and finding an edge. In my league, everyone seems to follow the same podcasts and websites, so I’m exploring a different path. For me, the best way to learn is to roll up my sleeves and analyze the data myself. This blog is my way of experimenting, strategizing, and getting ready for a serious run at the 2025 championship.
 
-My goal for 2025 is to provide one tutorial per week in the form of a Jupyter Notebook, diving deep into a specific fantasy football topic. Navigation for these notebooks is on the left side of the page.
+My goal for 2025 is to provide a series of Jupyter Notebooks that deep into a specific fantasy football topics. Navigation for these notebooks is on the left side of the page.
 
 Some of the topics I how to explore are:
 
