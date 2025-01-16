@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Scraping Fantasy Data - December 31st, 2024 &#8212; Waiver Raider Fantasy Football Analytics</title>
+    <title>January 1st, 2025 - Scraping Fantasy Data &#8212; Waiver Raider Fantasy Football Analytics</title>
   
   
   
@@ -60,8 +60,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/scraping_fantasy_data_12-31-2024';</script>
-    <link rel="canonical" href="https://mmcint.github.io/waiver-raider/book/scraping_fantasy_data_12-31-2024.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/scraping_fantasy_data_01-01-2025';</script>
+    <link rel="canonical" href="https://mmcint.github.io/waiver-raider/book/scraping_fantasy_data_01-01-2025.html" />
     <link rel="icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -164,7 +164,7 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Blog Posts</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Scraping Fantasy Data - December 31st, 2024</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">January 1st, 2025 - Scraping Fantasy Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Helpful Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -229,7 +229,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/mmcint/waiver-raider/master?urlpath=tree/book/scraping_fantasy_data_12-31-2024.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/mmcint/waiver-raider/master?urlpath=tree/book/scraping_fantasy_data_01-01-2025.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -247,7 +247,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/mmcint/waiver-raider/blob/master/book/scraping_fantasy_data_12-31-2024.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/mmcint/waiver-raider/blob/master/book/scraping_fantasy_data_01-01-2025.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +295,7 @@
       
       
       
-      <li><a href="https://github.com/mmcint/waiver-raider/issues/new?title=Issue%20on%20page%20%2Fbook/scraping_fantasy_data_12-31-2024.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/mmcint/waiver-raider/issues/new?title=Issue%20on%20page%20%2Fbook/scraping_fantasy_data_01-01-2025.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +325,7 @@
       
       
       
-      <li><a href="../_sources/book/scraping_fantasy_data_12-31-2024.ipynb" target="_blank"
+      <li><a href="../_sources/book/scraping_fantasy_data_01-01-2025.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +399,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Scraping Fantasy Data - December 31st, 2024</h1>
+    <h1>January 1st, 2025 - Scraping Fantasy Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -414,8 +414,8 @@
                 <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/mmcint/waiver-raider/blob/main/scraping_fantasy_data_10_12_24.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="scraping-fantasy-data-december-31st-2024">
-<h1>Scraping Fantasy Data - December 31st, 2024<a class="headerlink" href="#scraping-fantasy-data-december-31st-2024" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="january-1st-2025-scraping-fantasy-data">
+<h1>January 1st, 2025 - Scraping Fantasy Data<a class="headerlink" href="#january-1st-2025-scraping-fantasy-data" title="Link to this heading">#</a></h1>
 <p>This is a notebook that will scrape advanced stats for offensive fantasy football positions. The website used to scrape is FantasyPros. Additionally, I calculate Average Depth of Target, or ADOT, for WRs and TEs. I’ll explain this statistic at the bottom of the notebook. First, let’s build a web scraper using <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>, which is standard method when using Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -427,24 +427,9 @@
 <span class="kn">import</span> <span class="nn">concurrent.futures</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numexpr</span> <span class="k">as</span> <span class="nn">ne</span> 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NUMEXPR_MAX_THREADS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NUMEXPR_NUM_THREADS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">4</span><span class="n">d02ff612a75</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">logging</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">numexpr</span> <span class="k">as</span> <span class="nn">ne</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NUMEXPR_MAX_THREADS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numexpr&#39;
 </pre></div>
 </div>
 </div>
@@ -560,10 +545,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-12-31 15:49:45,964 - INFO - Scraped RB data for 2023
-2024-12-31 15:49:48,663 - INFO - Scraped QB data for 2023
-2024-12-31 15:49:52,189 - INFO - Scraped TE data for 2023
-2024-12-31 15:49:54,201 - INFO - Scraped WR data for 2023
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-01-16 05:48:22,993 - ERROR - Error processing RB data for 2023: 3 columns passed, passed data had 0 columns
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-01-16 05:48:25,571 - ERROR - Error processing QB data for 2023: 3 columns passed, passed data had 0 columns
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-01-16 05:48:29,554 - ERROR - Error processing TE data for 2023: 3 columns passed, passed data had 0 columns
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-01-16 05:48:31,260 - ERROR - Error processing WR data for 2023: 3 columns passed, passed data had 0 columns
 </pre></div>
 </div>
 </div>
@@ -576,316 +567,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">1632202</span><span class="n">c9fb2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">all_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Player</th>
-      <th>G</th>
-      <th>REC</th>
-      <th>YDS</th>
-      <th>Y/R</th>
-      <th>YBC</th>
-      <th>YBC/R</th>
-      <th>AIR</th>
-      <th>AIR/R</th>
-      <th>YAC</th>
-      <th>...</th>
-      <th>DROP</th>
-      <th>RZ TGT</th>
-      <th>10+ YDS</th>
-      <th>20+ YDS</th>
-      <th>30+ YDS</th>
-      <th>40+ YDS</th>
-      <th>50+ YDS</th>
-      <th>LNG</th>
-      <th>Season</th>
-      <th>Position</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>CeeDee Lamb (DAL)</td>
-      <td>17</td>
-      <td>135</td>
-      <td>1,749</td>
-      <td>13.0</td>
-      <td>1,073</td>
-      <td>7.9</td>
-      <td>1,726</td>
-      <td>12.8</td>
-      <td>676</td>
-      <td>...</td>
-      <td>6</td>
-      <td>31</td>
-      <td>73</td>
-      <td>29</td>
-      <td>8</td>
-      <td>3</td>
-      <td>1</td>
-      <td>92</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Tyreek Hill (MIA)</td>
-      <td>16</td>
-      <td>119</td>
-      <td>1,799</td>
-      <td>15.1</td>
-      <td>1,146</td>
-      <td>9.6</td>
-      <td>1,847</td>
-      <td>15.5</td>
-      <td>653</td>
-      <td>...</td>
-      <td>12</td>
-      <td>24</td>
-      <td>64</td>
-      <td>29</td>
-      <td>14</td>
-      <td>9</td>
-      <td>5</td>
-      <td>78</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Amon-Ra St. Brown (DET)</td>
-      <td>16</td>
-      <td>119</td>
-      <td>1,515</td>
-      <td>12.7</td>
-      <td>847</td>
-      <td>7.1</td>
-      <td>1,297</td>
-      <td>10.9</td>
-      <td>668</td>
-      <td>...</td>
-      <td>8</td>
-      <td>23</td>
-      <td>60</td>
-      <td>24</td>
-      <td>6</td>
-      <td>3</td>
-      <td>1</td>
-      <td>70</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Mike Evans (TB)</td>
-      <td>17</td>
-      <td>79</td>
-      <td>1,255</td>
-      <td>15.9</td>
-      <td>933</td>
-      <td>11.8</td>
-      <td>1,899</td>
-      <td>24.0</td>
-      <td>322</td>
-      <td>...</td>
-      <td>7</td>
-      <td>14</td>
-      <td>46</td>
-      <td>20</td>
-      <td>10</td>
-      <td>6</td>
-      <td>3</td>
-      <td>75</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Puka Nacua (LAR)</td>
-      <td>17</td>
-      <td>105</td>
-      <td>1,486</td>
-      <td>14.2</td>
-      <td>854</td>
-      <td>8.1</td>
-      <td>1,453</td>
-      <td>13.8</td>
-      <td>632</td>
-      <td>...</td>
-      <td>13</td>
-      <td>16</td>
-      <td>59</td>
-      <td>25</td>
-      <td>10</td>
-      <td>3</td>
-      <td>2</td>
-      <td>80</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>186</th>
-      <td>Miles Boykin (SEA)</td>
-      <td>16</td>
-      <td>3</td>
-      <td>17</td>
-      <td>5.7</td>
-      <td>15</td>
-      <td>5.0</td>
-      <td>19</td>
-      <td>6.3</td>
-      <td>2</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>6</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>187</th>
-      <td>Marvin Jones Jr. (FA)</td>
-      <td>6</td>
-      <td>5</td>
-      <td>35</td>
-      <td>7.0</td>
-      <td>26</td>
-      <td>5.2</td>
-      <td>80</td>
-      <td>16.0</td>
-      <td>9</td>
-      <td>...</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>16</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>188</th>
-      <td>Malik Taylor (NYJ)</td>
-      <td>3</td>
-      <td>2</td>
-      <td>13</td>
-      <td>6.5</td>
-      <td>6</td>
-      <td>3.0</td>
-      <td>89</td>
-      <td>44.5</td>
-      <td>7</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>7</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>189</th>
-      <td>Austin Trammell (JAC)</td>
-      <td>15</td>
-      <td>4</td>
-      <td>29</td>
-      <td>7.3</td>
-      <td>-6</td>
-      <td>-1.5</td>
-      <td>25</td>
-      <td>6.3</td>
-      <td>35</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>14</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-    <tr>
-      <th>190</th>
-      <td>James Proche II (CLE)</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>86</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2023</td>
-      <td>WR</td>
-    </tr>
-  </tbody>
-</table>
-<p>190 rows × 27 columns</p>
-</div></div></div>
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
