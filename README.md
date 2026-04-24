@@ -1,107 +1,86 @@
-# Dynasty Analytics Platform
+# Waiver Raiders Football Analytics
 
-Local analytics for a 12-team Sleeper dynasty league (half PPR, TE premium, superflex). See [`../dynasty-analytics-architecture.md`](../dynasty-analytics-architecture.md) for the full design.
+A local + cloud-hosted analytics platform for a 12-team Sleeper dynasty league (half PPR, TE premium, superflex).
+
+**Live app:** [waiver-raider.streamlit.app](https://waiver-raider.streamlit.app)
 
 **League ID:** `1315773051115167744`
 
-## Setup
+---
+
+## Features
+
+| Page | What it does |
+|---|---|
+| **Dashboard** | Your roster front-and-center — standings, age profile, competitive window |
+| **Rookie Draft** | Prospect board (skill positions only), position scouts, NGS debut data, FantasyPros |
+| **Weekly Lineup** | Start/sit optimizer, player deep-dive, rolling projections, scoring explainers |
+| **Trends** | Breakout alerts, rolling production, xFP vs actual, Next Gen Stats |
+| **Waivers** | Ranked pickups, platform-trending adds, FAAB bid calculator |
+| **Player Compare** | Multi-player weekly trends, season totals, radar profile, raw stats |
+
+---
+
+## Run locally
 
 ```bash
-cd dynasty-analytics
 python3 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
 pip install -r requirements.txt
-```
 
-Every command below assumes the venv is active (`source .venv/bin/activate`). If you'd rather not activate, prefix with `.venv/bin/` — e.g. `.venv/bin/python -m ingestion.sync`.
-
-## First-time sync
-
-Pull Sleeper league data + NFL stats + build the ID crosswalk:
-
-```bash
-python -m ingestion.sync
-```
-
-Flags:
-- `--skip-nfl` — only refresh Sleeper snapshots (fast)
-- `--skip-players` — don't re-download the 5MB `/players/nfl` blob
-- `--with-pbp` — also cache play-by-play (slow, large)
-
-The `data/` directory is filesystem-only (JSON + parquet). Nothing goes to a database.
-
-## Run the app
-
-```bash
+python -m ingestion.sync      # pull Sleeper + NFL data (~2-4 min first time)
 streamlit run app.py
 ```
 
-Open the URL Streamlit prints. The landing page has sync buttons so you can refresh data without leaving the app.
-
-## Pages
-
-1. **Dashboard** — standings, scoring settings, your roster
-2. **Rookie Draft** — prospect board (NFL draft + combine), historical hit rates by position × round, your pick inventory
-3. **Weekly Lineup** — roster projections + greedy optimizer respecting QB / RB / WR / TE / FLEX / SUPER_FLEX slots
-4. **Trends** — breakout alerts, snap-share ascending, xFP vs actual, rolling production
-5. **Waivers** — ranked unrostered players, platform-trending adds, FAAB bid helper
-
-Set `MY_ROSTER_ID` in `config.py` to pin your roster across pages.
-
-## Project layout
-
-```
-dynasty-analytics/
-├── app.py                      # Streamlit entry point
-├── config.py                   # League ID, data paths, thresholds
-├── requirements.txt
-├── ingestion/
-│   ├── sleeper_api.py          # Sleeper API client
-│   ├── nfl_stats.py            # nfl_data_py wrapper
-│   ├── id_mapping.py           # Sleeper <-> GSIS crosswalk
-│   └── sync.py                 # Master sync (CLI + library)
-├── storage/io.py               # JSON / parquet helpers
-├── scoring/engine.py           # Applies Sleeper scoring_settings to weekly stats
-├── analysis/
-│   ├── common.py               # Cached loaders for pages
-│   ├── trends.py               # Rolling, breakout, xFP
-│   ├── waivers.py              # Available-player ranking
-│   ├── weekly_optimizer.py     # Lineup optimizer
-│   ├── rookie_draft.py         # Prospect board, hit rates
-│   └── dynasty_value.py        # Age curves, contender/rebuild signal
-├── pages/                      # Streamlit multi-page app
-└── data/                       # gitignored; populated by ingestion.sync
+**Find your roster ID:**
+```bash
+python3 -c "
+from analysis import common
+for r in common.rosters():
+    u = common.user_by_id(r.get('owner_id') or '') or {}
+    print(f\"roster_id={r['roster_id']}  {u.get('display_name')}\")
+"
 ```
 
-## Validating the scoring engine
+Then set `MY_ROSTER_ID` in `config.py`.
 
-After your first sync, pick a completed week and compare:
+---
 
-```python
-from analysis import common, trends
-from scoring import engine
-from storage import io as sio
-import config
+## Deploy to Streamlit Community Cloud
 
-scored = trends.build_scored_weekly()
-matchups = sio.read_json(config.SLEEPER_DIR / "matchups_week_5.json")
-id_map = common.id_map()
+1. Push this repo to GitHub (already done)
+2. Go to [share.streamlit.io](https://share.streamlit.io) → **New app**
+3. Pick repo `mmcint/waiver-raider`, branch `main`, file `app.py`
+4. Under **Advanced → Secrets**, add:
+   ```toml
+   FANTASYPROS_API_KEY = "your_key_here"
+   ```
+5. Click **Deploy** — the app auto-syncs data on first startup
 
-print(engine.validate_against_sleeper(scored, week=5, season=2025, matchups=matchups, id_map=id_map))
+**After deploying:** update the redirect URL in `.github/redirect/index.html` with your actual Streamlit Cloud URL.
+
+---
+
+## Data sources
+
+| Source | Cost | What it provides |
+|---|---|---|
+| Sleeper API | Free | League data — rosters, matchups, transactions, draft picks |
+| nfl_data_py / nflverse | Free | Weekly stats, snap counts, rosters, combine data |
+| Next Gen Stats | Free | Separation, CPOE, RYOE, time to throw, YAC over expected |
+| FantasyPros API | Free key | Consensus rankings, ADP, rookie dynasty rankings |
+
+---
+
+## Sync schedule
+
+```bash
+# Weekly (Tuesday after games finalize)
+python -m ingestion.sync
+
+# Sleeper only (fast, during season)
+python -m ingestion.sync --skip-nfl
+
+# With play-by-play (large, occasional)
+python -m ingestion.sync --with-pbp
 ```
-
-The `engine_points` column should be within rounding of `sleeper_points`. If they diverge, a scoring-key mapping needs adjustment in `scoring/engine.py::SLEEPER_TO_WEEKLY`.
-
-## What's implemented vs. scaffolded
-
-- **Implemented:** All Phase 1 items (ingestion, ID map, scoring engine, dashboard) plus working versions of the trends, waiver, optimizer, and rookie draft modules with UI pages.
-- **Scaffolded / lightweight:** The projection used by the lineup optimizer is a rolling mean — swap in your own source. xFP uses simple opportunity weights; a richer model goes in `analysis/trends.py::expected_fantasy_points`. Dynasty trade values (KTC/FantasyCalc) are stubbed in `analysis/dynasty_value.py`.
-
-## Resource footprint
-
-Tuned for a base M4 Mac mini per the architecture doc:
-- Weekly / snaps / rosters cached as parquet for 3 seasons
-- Play-by-play only on demand (`--with-pbp`)
-- `downcast=True` on NFL frames
-- Streamlit `@st.cache_data` is not applied by default — add it to `analysis/common.py` loaders if you want stricter memoization across pages

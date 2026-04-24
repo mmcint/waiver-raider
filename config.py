@@ -1,4 +1,4 @@
-"""Central configuration for the dynasty analytics platform.
+"""Central configuration for the Waiver Raiders Football Analytics platform.
 
 Edit this file to change league settings, data scope, or paths. Everything
 else in the codebase reads from here so behaviour stays consistent.
