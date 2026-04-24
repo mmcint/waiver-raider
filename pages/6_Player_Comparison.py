@@ -278,18 +278,20 @@ with tabs[2]:
 # ── Tab 4: Raw ────────────────────────────────────────────────────────────
 with tabs[3]:
     st.subheader("Filtered weekly rows")
-    show_cols = [
-        c
-        for c in [
-            name_col,
-            "season",
-            "week",
-            "position",
-            "recent_team",
-            "team",
-            metric_col,
-            "fantasy_points_custom",
-        ]
-        if c in sub.columns
+    _raw_candidates = [
+        name_col,
+        "season",
+        "week",
+        "position",
+        "recent_team",
+        "team",
+        metric_col,
+        "fantasy_points_custom",
     ]
+    seen: set[str] = set()
+    show_cols = []
+    for c in _raw_candidates:
+        if c and c in sub.columns and c not in seen:
+            show_cols.append(c)
+            seen.add(c)
     st.dataframe(sub[show_cols].sort_values(["season", "week", name_col]), use_container_width=True, hide_index=True)
