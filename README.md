@@ -1,4 +1,4 @@
-# Dynasty Analytics — Waiver Raiders
+# Waiver Raiders Football Analytics
 
 A local + cloud-hosted analytics platform for a 12-team Sleeper dynasty league (half PPR, TE premium, superflex).
 

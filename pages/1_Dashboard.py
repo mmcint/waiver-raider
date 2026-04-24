@@ -11,7 +11,7 @@ from analysis import common, dynasty_value
 from scoring import engine as scoring_engine
 
 st.set_page_config(page_title="Dashboard", layout="wide")
-st.title("Dynasty Analytics Dashboard")
+st.title("🏈 Waiver Raiders Football Analytics")
 
 try:
     league = common.league()

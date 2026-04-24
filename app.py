@@ -15,7 +15,7 @@ import config
 from ingestion import sync as sync_mod
 
 st.set_page_config(
-    page_title="Dynasty Analytics",
+    page_title="Waiver Raiders Football Analytics",
     page_icon="🏈",
     layout="wide",
 )
@@ -58,7 +58,7 @@ if not _data_is_ready():
 
 from analysis import common  # noqa: E402 — after sync guard
 
-st.title("🏈 Dynasty Analytics")
+st.title("🏈 Waiver Raiders Football Analytics")
 st.caption(
     f"League `{config.LEAGUE_ID}` · half PPR · TE premium · superflex · 12-team dynasty"
 )
