@@ -1,7 +1,8 @@
 """Reusable Streamlit UI widgets used across multiple pages.
 
-Import as:
-    from ui_helpers import year_slicer, player_search, position_filter, chart_type_selector
+Exports: year_slicer, player_search, position_filter, week_filter,
+         chart_type_selector, player_selectbox, player_multiselect,
+         sidebar_research_filters
 """
 
 from __future__ import annotations
