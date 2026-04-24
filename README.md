@@ -1,32 +1,85 @@
-# Waiver Raider Fantasy Football Analytics
+# Dynasty Analytics — Waiver Raiders
 
-Waiver Raider Fantasy Football Analytics Blog
+A local + cloud-hosted analytics platform for a 12-team Sleeper dynasty league (half PPR, TE premium, superflex).
 
-## Usage
+**Live app:** [waiver-raider.streamlit.app](https://waiver-raider.streamlit.app)
 
-### Building the book
+**League ID:** `1315773051115167744`
 
-If you'd like to develop and/or build the Waiver Raider Fantasy Football Analytics book, you should:
+---
 
-1. Clone this repository
-2. Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
-3. (Optional) Edit the books source files located in the `waiver-raider/` directory
-4. Run `jupyter-book clean waiver-raider/` to remove any existing builds
-5. Run `jupyter-book build waiver-raider/`
-6. Push to main and run `ghp-import -n -p -f _build/html`
+## Features
 
-A fully-rendered HTML version of the book will be built in `waiver-raider/_build/html/`.
+| Page | What it does |
+|---|---|
+| **Dashboard** | Your roster front-and-center — standings, age profile, competitive window |
+| **Rookie Draft** | Prospect board (skill positions only), position scouts, NGS debut data, FantasyPros |
+| **Weekly Lineup** | Start/sit optimizer, player deep-dive, rolling projections |
+| **Trends** | Breakout alerts, rolling production, xFP vs actual, Next Gen Stats |
+| **Waivers** | Ranked pickups, platform-trending adds, FAAB bid calculator |
 
-### Hosting the book
+---
 
-Please see the [Jupyter Book documentation](https://jupyterbook.org/publish/web.html) to discover options for deploying a book online using services such as GitHub, GitLab, or Netlify.
+## Run locally
 
-For GitHub and GitLab deployment specifically, the [cookiecutter-jupyter-book](https://github.com/executablebooks/cookiecutter-jupyter-book) includes templates for, and information about, optional continuous integration (CI) workflow files to help easily and automatically deploy books online with GitHub or GitLab. For example, if you chose `github` for the `include_ci` cookiecutter option, your book template was created with a GitHub actions workflow file that, once pushed to GitHub, automatically renders and pushes your book to the `gh-pages` branch of your repo and hosts it on GitHub Pages when a push or pull request is made to the main branch.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 
-## Contributors
+python -m ingestion.sync      # pull Sleeper + NFL data (~2-4 min first time)
+streamlit run app.py
+```
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/mmcint/waiver-raider/graphs/contributors).
+**Find your roster ID:**
+```bash
+python3 -c "
+from analysis import common
+for r in common.rosters():
+    u = common.user_by_id(r.get('owner_id') or '') or {}
+    print(f\"roster_id={r['roster_id']}  {u.get('display_name')}\")
+"
+```
 
-## Credits
+Then set `MY_ROSTER_ID` in `config.py`.
 
-This project is created using the excellent open source [Jupyter Book project](https://jupyterbook.org/) and the [executablebooks/cookiecutter-jupyter-book template](https://github.com/executablebooks/cookiecutter-jupyter-book).
+---
+
+## Deploy to Streamlit Community Cloud
+
+1. Push this repo to GitHub (already done)
+2. Go to [share.streamlit.io](https://share.streamlit.io) → **New app**
+3. Pick repo `mmcint/waiver-raider`, branch `main`, file `app.py`
+4. Under **Advanced → Secrets**, add:
+   ```toml
+   FANTASYPROS_API_KEY = "your_key_here"
+   ```
+5. Click **Deploy** — the app auto-syncs data on first startup
+
+**After deploying:** update the redirect URL in `.github/redirect/index.html` with your actual Streamlit Cloud URL.
+
+---
+
+## Data sources
+
+| Source | Cost | What it provides |
+|---|---|---|
+| Sleeper API | Free | League data — rosters, matchups, transactions, draft picks |
+| nfl_data_py / nflverse | Free | Weekly stats, snap counts, rosters, combine data |
+| Next Gen Stats | Free | Separation, CPOE, RYOE, time to throw, YAC over expected |
+| FantasyPros API | Free key | Consensus rankings, ADP, rookie dynasty rankings |
+
+---
+
+## Sync schedule
+
+```bash
+# Weekly (Tuesday after games finalize)
+python -m ingestion.sync
+
+# Sleeper only (fast, during season)
+python -m ingestion.sync --skip-nfl
+
+# With play-by-play (large, occasional)
+python -m ingestion.sync --with-pbp
+```
