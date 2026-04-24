@@ -1,0 +1,14 @@
+[theme]
+# Dracula color palette — https://draculatheme.com
+primaryColor     = "#bd93f9"   # Purple  — buttons, links, active widgets
+backgroundColor  = "#282a36"   # Background — main canvas
+secondaryBackgroundColor = "#44475a"  # Current Line — sidebar, expanders, code blocks
+textColor        = "#f8f8f2"   # Foreground — body text
+font             = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+# Prevents double-reload on file save locally
+runOnSave = false

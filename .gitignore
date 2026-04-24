@@ -25,5 +25,6 @@ venv/
 # macOS
 .DS_Store
 
-# Streamlit local config (keep the dir, not the secrets)
-.streamlit/
+# Streamlit config — keep config.toml, ignore secrets only
+.streamlit/*
+!.streamlit/config.toml
