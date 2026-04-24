@@ -39,10 +39,6 @@ st.markdown(
         --drac-red:      #ff5555;
     }
 
-    /* Plotly chart paper/plot background */
-    .js-plotly-plot .plotly .bg { fill: var(--drac-bg) !important; }
-    .js-plotly-plot .plotly .main-svg { background: var(--drac-bg) !important; }
-
     /* Metric cards */
     [data-testid="stMetric"] {
         background: var(--drac-surface);
